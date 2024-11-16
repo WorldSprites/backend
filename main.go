@@ -2,13 +2,11 @@ package main
 
 import (
 	"fmt"
-	"log"
 	"os"
 	"strconv"
 
 	api "github.com/cloudlink-omega/backend/pkg/api"
 	dm "github.com/cloudlink-omega/backend/pkg/data"
-	godotenv "github.com/joho/godotenv"
 
 	/*
 		Before you run the server, you will need to manually specify which SQL driver you want to use.
@@ -26,13 +24,6 @@ func main() {
 			"sqlite",
 			"file:./test.db?_pragma=foreign_keys(1)", // Use SQLite for testing/development purposes only
 		)*/
-
-	// Load the .env file
-	err := godotenv.Load(".env")
-	if err != nil {
-		log.Fatal("Error loading .env file")
-		os.Exit(1)
-	}
 
 	apiPort, err := strconv.Atoi(os.Getenv("API_PORT"))
 	if err != nil {
