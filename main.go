@@ -17,6 +17,8 @@ import (
 	// _ "modernc.org/sqlite"
 )
 
+const emailPort = 0
+
 func main() {
 	/*
 		// Initialize data manager
