@@ -20,12 +20,6 @@ import (
 const emailPort = 0
 
 func main() {
-	/*
-		// Initialize data manager
-		mgr := dm.New(
-			"sqlite",
-			"file:./test.db?_pragma=foreign_keys(1)", // Use SQLite for testing/development purposes only
-		)*/
 
 	apiPort, err := strconv.Atoi(os.Getenv("API_PORT"))
 	if err != nil {
@@ -49,7 +43,8 @@ func main() {
 
 	// Initialize data manager
 	mgr := dm.New(
-
+		"sqlite",
+		"file:./test.db?_pragma=foreign_keys(1)",
 		/*
 			SERVER_NICKNAME: Specifies a global nickname for the server; You should NOT change this after public deployment!
 
