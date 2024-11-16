@@ -45,11 +45,6 @@ func main() {
 		panic(err)
 	}
 
-	emailPort, err := strconv.Atoi(os.Getenv("EMAIL_PORT"))
-	if err != nil {
-		panic(err)
-	}
-
 	// Initialize data manager
 	mgr := dm.New(
 
